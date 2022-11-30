@@ -1,0 +1,30 @@
+uuid: 0edea2ef-9f9c-4cbd-b12b-6181b664f057
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'administer users'
+  - 'create network_connect entities'
+  - 'create network_orders entities'
+  - 'create order_tasks entities'
+  - 'delete own order_tasks entities'
+  - 'edit any network_connect entities'
+  - 'edit any network_orders entities'
+  - 'edit own order_tasks entities'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use text format basic_html'
+  - 'view own network_connect entities'
+  - 'view own network_orders entities'
+  - 'view own order_tasks entities'

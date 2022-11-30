@@ -1,0 +1,19 @@
+uuid: 0d372378-1822-4e11-b7af-40dc2c08d572
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order
+    - field.storage.network_orders.field_address_line_1
+id: network_orders.network_order.field_address_line_1
+field_name: field_address_line_1
+entity_type: network_orders
+bundle: network_order
+label: 'Address Line 1'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

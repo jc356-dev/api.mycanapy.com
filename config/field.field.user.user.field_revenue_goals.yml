@@ -1,0 +1,26 @@
+uuid: bbd00c36-3c56-4ee3-9ef5-ccd809bf5c9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_revenue_goals
+  module:
+    - user
+id: user.user.field_revenue_goals
+field_name: field_revenue_goals
+entity_type: user
+bundle: user
+label: 'Revenue Goals'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

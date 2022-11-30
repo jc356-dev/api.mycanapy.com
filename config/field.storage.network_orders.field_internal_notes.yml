@@ -1,0 +1,20 @@
+uuid: f5d36646-239b-4497-81d6-03e3c0668dc9
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - eck
+id: network_orders.field_internal_notes
+field_name: field_internal_notes
+entity_type: network_orders
+type: comment
+settings:
+  comment_type: internal_notes
+module: comment
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

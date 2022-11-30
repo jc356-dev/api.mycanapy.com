@@ -1,0 +1,19 @@
+uuid: fd3fb456-05dc-414a-8ee3-a2b960fe3ff3
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: network_orders.field_order_items
+field_name: field_order_items
+entity_type: network_orders
+type: entity_reference
+settings:
+  target_type: network_orders
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

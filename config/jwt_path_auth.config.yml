@@ -1,0 +1,4 @@
+allowed_path_prefixes:
+  - /system/files/
+_core:
+  default_config_hash: 6zZGvgfqLmQ8omOWRaunHspGK-KGaEqaghPrIbaURYs

@@ -1,0 +1,33 @@
+uuid: 98c1d21b-f537-40ed-96a7-0029c5f1ee49
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order
+    - field.storage.network_orders.field_internal_notes
+  module:
+    - comment
+id: network_orders.network_order.field_internal_notes
+field_name: field_internal_notes
+entity_type: network_orders
+bundle: network_order
+label: 'Internal Notes'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    status: 2
+    cid: 0
+    last_comment_timestamp: 0
+    last_comment_name: null
+    last_comment_uid: 0
+    comment_count: 0
+default_value_callback: ''
+settings:
+  default_mode: 1
+  per_page: 50
+  anonymous: 0
+  form_location: true
+  preview: 1
+field_type: comment

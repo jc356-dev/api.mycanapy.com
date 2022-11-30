@@ -1,0 +1,28 @@
+uuid: caf73b94-4c34-411d-9840-45389b3c6940
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.notifications.user2notification
+    - field.storage.notifications.field_update
+    - node.type.updates
+id: notifications.user2notification.field_update
+field_name: field_update
+entity_type: notifications
+bundle: user2notification
+label: Update
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      updates: updates
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

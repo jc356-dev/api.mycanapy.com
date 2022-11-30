@@ -1,0 +1,18 @@
+uuid: 0f71b2c6-f1b3-48d5-be70-810d626be0ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: network_orders.field_total_sub
+field_name: field_total_sub
+entity_type: network_orders
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

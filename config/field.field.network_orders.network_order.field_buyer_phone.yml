@@ -1,0 +1,19 @@
+uuid: f07f4403-33e1-4b29-bdc4-a77c980a3461
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order
+    - field.storage.network_orders.field_buyer_phone
+id: network_orders.network_order.field_buyer_phone
+field_name: field_buyer_phone
+entity_type: network_orders
+bundle: network_order
+label: 'Buyer Phone'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: a732995c-151f-4986-ada7-69a0b8294c74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_label_color
+    - taxonomy.vocabulary.status
+id: taxonomy_term.status.field_label_color
+field_name: field_label_color
+entity_type: taxonomy_term
+bundle: status
+label: 'Label Color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

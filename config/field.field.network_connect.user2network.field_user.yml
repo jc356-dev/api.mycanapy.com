@@ -1,0 +1,28 @@
+uuid: 55845571-9ad3-455d-8efd-9b1b16d7c3af
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_connect.user2network
+    - field.storage.network_connect.field_user
+id: network_connect.user2network.field_user
+field_name: field_user
+entity_type: network_connect
+bundle: user2network
+label: User
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

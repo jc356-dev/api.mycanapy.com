@@ -1,0 +1,28 @@
+uuid: 72282389-6252-422e-884a-be5e272a1989
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order
+    - eck.eck_type.network_orders.network_order_item
+    - field.storage.network_orders.field_order_items
+id: network_orders.network_order.field_order_items
+field_name: field_order_items
+entity_type: network_orders
+bundle: network_order
+label: 'Order Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:network_orders'
+  handler_settings:
+    target_bundles:
+      network_order_item: network_order_item
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

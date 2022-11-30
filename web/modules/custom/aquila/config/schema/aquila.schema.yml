@@ -1,0 +1,8 @@
+# /modules/aquila/config/schema/aquila.schema.yml
+aquila.settings:
+  type: config_object
+  label: 'Aquila config'
+  mapping:
+    message:
+      type: text
+      label: 'Message'

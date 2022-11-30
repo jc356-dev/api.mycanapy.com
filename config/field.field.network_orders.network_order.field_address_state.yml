@@ -1,0 +1,19 @@
+uuid: 920c1e4f-4ef9-4e72-a8e8-b99bcd95e9c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order
+    - field.storage.network_orders.field_address_state
+id: network_orders.network_order.field_address_state
+field_name: field_address_state
+entity_type: network_orders
+bundle: network_order
+label: 'Address State'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

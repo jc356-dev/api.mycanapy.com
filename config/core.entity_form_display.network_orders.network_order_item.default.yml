@@ -1,0 +1,115 @@
+uuid: 215198ae-14ab-42dc-beb9-00f1d787172f
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order_item
+    - field.field.network_orders.network_order_item.field_external_image
+    - field.field.network_orders.network_order_item.field_external_order_id
+    - field.field.network_orders.network_order_item.field_order
+    - field.field.network_orders.network_order_item.field_price
+    - field.field.network_orders.network_order_item.field_product_id
+    - field.field.network_orders.network_order_item.field_quantity
+    - field.field.network_orders.network_order_item.field_sku
+    - field.field.network_orders.network_order_item.field_user
+    - field.field.network_orders.network_order_item.field_variation
+  module:
+    - link
+id: network_orders.network_order_item.default
+targetEntityType: network_orders
+bundle: network_order_item
+mode: default
+content:
+  field_external_image:
+    weight: 9
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_external_order_id:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_order:
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_price:
+    weight: 11
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_product_id:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_quantity:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_sku:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_user:
+    weight: 14
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_variation:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

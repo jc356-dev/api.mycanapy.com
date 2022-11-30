@@ -1,0 +1,77 @@
+diff --git a/src/Controller/StripeController.php b/src/Controller/StripeController.php
+index 522b494..27fe081 100644
+--- a/src/Controller/StripeController.php
++++ b/src/Controller/StripeController.php
+@@ -121,4 +121,17 @@ class StripeController extends ControllerBase {
+     return new JsonResponse($subscription);
+   }
+ 
++  /**
++   * Checks that a coupon code is valid.
++   */
++  public function checkCouponCode(Request $request) {
++    // Fetch the coupon code info from the POST.
++    $coupon_code = json_decode($request->getContent(), TRUE);
++
++    // Check for the code on Stripe.
++    $coupon = $this->stripeService->checkCouponCode($coupon_code);
++
++    return new JsonResponse($coupon);
++  }
++  
+ }
+diff --git a/src/StripeService.php b/src/StripeService.php
+index 94ca236..eb292d8 100644
+--- a/src/StripeService.php
++++ b/src/StripeService.php
+@@ -236,6 +236,7 @@ class StripeService implements ContainerFactoryPluginInterface {
+       'items' => [
+         ['plan' => $customer['plan']['id']]
+       ],
++      'coupon' => $customer['coupon'],
+     ]);
+ 
+     return $subscription;
+@@ -284,4 +285,27 @@ class StripeService implements ContainerFactoryPluginInterface {
+     return $subscription;
+   }
+ 
++  /**
++   * Return if a coupon is valid
++   */
++  public function checkCouponCode($coupon_code) {
++    // Loading the configuration.
++    $config = $this->configFactory->get('stripe.settings');
++
++    // Setting the secret key.
++    $secretKey = $config->get('stripe.use_test') ?
++      $config->get('stripe.sk_test') :
++      $config->get('stripe.sk_live');
++
++    Stripe::setApiKey($secretKey);
++
++    // Getting all the plans.
++    $this->coupon = \Stripe\PromotionCode::all(
++      ['code'=>$coupon_code['coupon'],
++      'active' => true]
++    );
++
++    return $this->coupon->data;
++  }
++
+ }
+diff --git a/stripe.routing.yml b/stripe.routing.yml
+index 99f2fd3..392401e 100644
+--- a/stripe.routing.yml
++++ b/stripe.routing.yml
+@@ -61,3 +61,10 @@ stripe.cancel_subscription_due:
+     _controller: '\Drupal\stripe\Controller\StripeController::cancelSubscriptionDue'
+   requirements:
+     _access: 'TRUE'
++stripe.check_coupon_code:
++  path: '/api/stripe/check_coupon_code'
++  defaults:
++    _controller: '\Drupal\stripe\Controller\StripeController::checkCouponCode'
++  methods: [POST]
++  requirements:
++    _access: 'TRUE'

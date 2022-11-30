@@ -1,0 +1,9 @@
+uuid: d10685dd-10af-498d-bed7-60eeec24b68d
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.order_tasks
+type: task
+name: Task
+description: ''

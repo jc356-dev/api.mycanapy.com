@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Contains rest_toolkit.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function rest_toolkit_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the rest_toolkit module.
+    case 'help.page.rest_toolkit':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('A collection of the finest tools in the land for your RESTful needs.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function _rest_toolkit_create_user($mail, $username = '', $password = '') {
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $user = \Drupal\user\Entity\User::create();
+
+  // Mandatory.
+  if (empty($password)) {
+    $password = user_password();
+  }
+  $user->setPassword($password);
+  $user->enforceIsNew();
+  $user->setEmail($mail);
+  $user->setUsername($mail);
+
+  // Optional.
+  $user->set('init', $mail);
+  $user->set('langcode', $language);
+  $user->set('preferred_langcode', $language);
+  $user->set('preferred_admin_langcode', $language);
+  // $user->set('setting_name', 'setting_value');
+  // $user->addRole('customer');
+  $user->activate();
+
+  // Save user account.
+  $user->save();
+
+  return $user;
+}

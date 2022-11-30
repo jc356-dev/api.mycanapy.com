@@ -1,0 +1,21 @@
+uuid: 7a737d42-5c2e-467b-b2c6-2a39008c0a98
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: network_connect.field_refresh_token
+field_name: field_refresh_token
+entity_type: network_connect
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

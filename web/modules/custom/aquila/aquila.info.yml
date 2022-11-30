@@ -1,0 +1,6 @@
+name: aquila
+type: module
+description: Collection for foundation functionality of all Aquila Creative sites
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9

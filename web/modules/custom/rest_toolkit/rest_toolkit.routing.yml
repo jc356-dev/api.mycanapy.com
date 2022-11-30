@@ -1,0 +1,32 @@
+# Entity CRUD controller.
+rest_toolkit.entity.crud.post:
+  path: '/rtapi/v1/entity/{entity_type}/{bundle}'
+  defaults:
+    _controller: '\Drupal\rest_toolkit\Controller\RTEntityController::post'
+    _title: 'Create'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+
+rest_toolkit.entity.crud.patch:
+  path: '/rtapi/v1/entity/{entity_type}/{id}'
+  defaults:
+    _controller: '\Drupal\rest_toolkit\Controller\RTEntityController::patch'
+    _title: 'Patch'
+  methods: [PATCH]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+
+rest_toolkit.entity.crud.get:
+  path: '/rtapi/v1/entity/{entity_type}/{id}'
+  defaults:
+    _controller: '\Drupal\rest_toolkit\Controller\RTEntityController::get'
+    _title: 'Load'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+# End Entity CRUD Controller.
+

@@ -1,0 +1,20 @@
+uuid: 3d3ad0b3-3ec1-4dde-b49e-c29125782649
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - eck
+id: order_tasks.field_due_date
+field_name: field_due_date
+entity_type: order_tasks
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,10 @@
+uuid: 43a749d9-f312-4208-9823-28a237613b2f
+langcode: en
+status: true
+dependencies: {  }
+id: network_orders
+label: 'Network Orders'
+created: false
+changed: false
+uid: true
+title: true

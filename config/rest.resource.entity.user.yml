@@ -1,0 +1,19 @@
+uuid: 0a005f4e-6eee-42d3-8982-2fa87507b845
+langcode: en
+status: true
+dependencies:
+  module:
+    - jwt
+    - serialization
+    - user
+id: entity.user
+plugin_id: 'entity:user'
+granularity: resource
+configuration:
+  methods:
+    - GET
+    - PATCH
+  formats:
+    - json
+  authentication:
+    - jwt_auth

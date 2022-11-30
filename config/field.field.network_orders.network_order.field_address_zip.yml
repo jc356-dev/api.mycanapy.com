@@ -1,0 +1,23 @@
+uuid: bce2dc41-59a2-4fff-94f8-fbba4d22d76d
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order
+    - field.storage.network_orders.field_address_zip
+id: network_orders.network_order.field_address_zip
+field_name: field_address_zip
+entity_type: network_orders
+bundle: network_order
+label: 'Address ZIP'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

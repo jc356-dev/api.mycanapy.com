@@ -1,0 +1,33 @@
+uuid: 6603175b-81a5-4675-9f48-d14f0c0af9c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order
+    - field.storage.network_orders.field_internal_status
+    - taxonomy.vocabulary.status
+  content:
+    - 'taxonomy_term:status:56041837-2b18-4491-b6a7-db345cb01add'
+id: network_orders.network_order.field_internal_status
+field_name: field_internal_status
+entity_type: network_orders
+bundle: network_order
+label: 'Internal Status'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 56041837-2b18-4491-b6a7-db345cb01add
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      status: status
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

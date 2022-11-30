@@ -1,0 +1,20 @@
+uuid: 7b1df6c2-1ff3-4f9a-83e3-c2c4b2b24958
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - user
+id: order_tasks.field_user
+field_name: field_user
+entity_type: order_tasks
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

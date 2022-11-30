@@ -1,0 +1,27 @@
+uuid: 8b5ebe97-8f3b-4ece-ab1c-6dc12a044efb
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.internal_notes
+    - field.field.comment.internal_notes.comment_body
+  module:
+    - text
+id: comment.internal_notes.default
+targetEntityType: comment
+bundle: internal_notes
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

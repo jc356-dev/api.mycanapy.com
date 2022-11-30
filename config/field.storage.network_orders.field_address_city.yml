@@ -1,0 +1,21 @@
+uuid: b3695382-edcd-4de5-a16a-2323dd06ccb2
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: network_orders.field_address_city
+field_name: field_address_city
+entity_type: network_orders
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

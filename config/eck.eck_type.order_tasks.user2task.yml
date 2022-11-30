@@ -1,0 +1,9 @@
+uuid: 5b73ed38-07e3-4316-9684-9ecedcb1c820
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.order_tasks
+type: user2task
+name: User2Task
+description: ''

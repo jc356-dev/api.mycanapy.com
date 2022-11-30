@@ -1,0 +1,19 @@
+uuid: bbf6cf52-0346-4075-ac72-18288bc50750
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order
+    - field.storage.network_orders.field_address_city
+id: network_orders.network_order.field_address_city
+field_name: field_address_city
+entity_type: network_orders
+bundle: network_order
+label: 'Address City'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

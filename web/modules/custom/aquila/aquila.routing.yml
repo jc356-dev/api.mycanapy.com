@@ -1,0 +1,298 @@
+aquila.settings_form:
+  path: '/admin/config/system/aquila'
+  defaults:
+    _title: 'aquila settings'
+    _form: 'Drupal\aquila\Form\SettingsForm'
+  requirements:
+    _permission: 'administer aquila configuration'
+
+## Connect network
+aquila.oauth.notify:
+  path: '/api/v1/auth/notify'
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaAuthController::notify'
+    _title: 'Application oAuth'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+
+aquila.oauth.shopify:
+  path: '/api/v1/auth/connect/shopify'
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaAuthController::oauth_shopify'
+    _title: 'Create Shopify Connection oAuth'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+
+aquila.oauth:
+  path: '/api/v1/auth/{network}'
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaAuthController::oauth'
+    _title: 'Application oAuth'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+
+aquila.oauth.callback:
+  path: '/api/v1/auth/{network}/callback'
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaAuthController::oauth_callback'
+    _title: 'Application oAuth Callback'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+
+aquila.get.fetch_orders:
+  path: '/api/v1/fetch_orders'
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaController::getSocialOrders'
+    _title: 'Application Get Orders'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+
+aquila.post.process_step.post:
+  path: '/api/v1/process_step'
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaController::postProcessStep'
+    _title: 'Application Process Step'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+
+aquila.post.process_step.patch:
+  path: '/api/v1/process_step'
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaController::patchProcessStep'
+    _title: 'Edit Process Step'
+  methods: [PATCH]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+
+aquila.get.tasks:
+  path: '/api/v1/tasks/{order}'
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaController::getUserTasks'
+    _title: 'Application Get User Tasks'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+
+aquila.networks.connected:
+  path: '/api/v1/networks'
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaController::connected_networks'
+    _title: 'Application oAuth Callback'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+
+aquila.get.updates:
+  path: '/api/v1/updates/{update}'
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaController::getUserUpdates'
+    _title: 'Get User Updates'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+
+aquila.post.update:
+  path: '/api/v1/updates/{update}'
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaController::postUserUpdate'
+    _title: 'Get User Updates'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+
+
+# ORDERS CRUD
+
+#Create Manual order
+aquila.post.order:
+ path: '/api/v1/order'
+ defaults:
+   _controller: '\Drupal\aquila\Controller\AquilaController::createManualOrder'
+   _title: 'Application Post Manual Order'
+ methods: [POST]
+ requirements:
+  _permission: 'access content'
+  _format: 'json'
+
+
+#Create Manual order
+aquila.patch.order:
+ path: '/api/v1/order'
+ defaults:
+   _controller: '\Drupal\aquila\Controller\AquilaController::updateManualOrder'
+   _title: 'Application Update Manual Order'
+ methods: [PATCH]
+ requirements:
+  _permission: 'access content'
+  _format: 'json'
+
+
+#Create Manual order
+aquila.delete.order:
+ path: '/api/v1/order/{order_id}'
+ defaults:
+   _controller: '\Drupal\aquila\Controller\AquilaController::deleteManualOrder'
+   _title: 'Application Delete Manual Order'
+ methods: [DELETE]
+ requirements:
+  _permission: 'access content'
+  _format: 'json'
+
+# Stripe Payments.
+aquila.stripe.pay.post:
+  path: "/api/v1/stripe/pay"
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaController::stripe_pay'
+    _title: "Membership Pay"
+  methods: [POST]
+  requirements:
+    _permission: "access content"
+    _format: "json"
+
+# Stripe Payments.
+aquila.stripe.session.post:
+  path: "/api/v1/stripe/session"
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaController::createStripeSession'
+    _title: "Create a stripe session"
+  methods: [POST]
+  requirements:
+    _permission: "access content"
+    _format: "json"
+
+# Stripe Subscription.
+aquila.stripe.subscription.get:
+  path: "/api/v1/stripe/subscription/{customer_id}"
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaController::getSubscriptionPlan'
+    _title: "Get Subscription"
+  methods: [GET]
+  requirements:
+    _permission: "access content"
+    _format: "json"
+
+# Stripe Invoices.
+aquila.stripe.invoice.get:
+  path: "/api/v1/stripe/invoices/{customer_id}"
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaController::getStripeInvoices'
+    _title: "Get Invoices"
+  methods: [GET]
+  requirements:
+    _permission: "access content"
+    _format: "json"
+
+# aquila.get.orders:
+#   path: '/api/v1/orders'
+#   defaults:
+#     _controller: '\Drupal\aquila\Controller\AquilaController::getSavedOrders'
+#     _title: 'Application Get Orders'
+#   methods: [GET]
+#   requirements:
+#     _permission: 'access content'
+#     _format: 'json'
+
+
+# # Post contact to ActiveCampaign.
+aquila.accontact.post:
+  path: '/api/v1/ac/contact'
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaController::create_ac_contact'
+    _title: 'Post ActiveCampaing Contact'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'
+
+aquila.user.login.http:
+  path: '/api/user/login'
+  defaults:
+    _controller: \Drupal\aquila\Controller\AquilaUserAuthenticationController::login
+  methods: [POST]
+  requirements:
+    _user_is_logged_in: 'FALSE'
+    _format: 'json'
+  options:
+    no_cache: TRUE
+
+aquila.user.pass.http:
+  path: '/api/user/pass'
+  defaults:
+    _controller: \Drupal\aquila\Controller\AquilaUserAuthenticationController::aquilaTokenResetPassword
+  methods: [PATCH]
+  requirements:
+    _format: 'json'
+    _permission: 'access content'
+  options:
+    no_cache: TRUE
+
+aquila.user.ulipass.http:
+  path: '/api/user/ulipass'
+  defaults:
+    _controller: \Drupal\aquila\Controller\AquilaUserAuthenticationController::aquilaUliPassword
+  methods: [POST]
+  requirements:
+    _user_is_logged_in: 'FALSE'
+    _format: 'json'
+  options:
+    no_cache: TRUE
+
+aquila.user.ulilogin.http:
+  path: '/api/user/uli/login'
+  defaults:
+    _controller: \Drupal\aquila\Controller\AquilaUserAuthenticationController::uliLogin
+  methods: [POST]
+  requirements:
+    _format: 'json'
+    _permission: 'access content'
+  options:
+    no_cache: TRUE
+
+##################
+# Webhooks
+#################
+
+# GDPR.
+aquila.webhook.customers.data_request:
+  path: "/customers/data_request"
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaWebhookController::dataRequest'
+    _title: "Capture Webhooks"
+  methods: [POST]
+  requirements:
+    _custom_access: '\Drupal\aquila\Controller\AquilaWebhookController::access'
+
+aquila.webhook.customers.redact:
+  path: "/customers/redact"
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaWebhookController::customersRedact'
+    _title: "Capture Webhooks"
+  methods: [POST]
+  requirements:
+    _custom_access: '\Drupal\aquila\Controller\AquilaWebhookController::access'
+
+aquila.webhook.shop.redact:
+  path: "/shop/redact"
+  defaults:
+    _controller: '\Drupal\aquila\Controller\AquilaWebhookController::shopRedact'
+    _title: "Capture Webhooks"
+  methods: [POST]
+  requirements:
+    _custom_access: '\Drupal\aquila\Controller\AquilaWebhookController::access'

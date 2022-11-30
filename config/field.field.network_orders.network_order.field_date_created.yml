@@ -1,0 +1,21 @@
+uuid: 03afc3a9-ac33-4eff-b11b-c06f51ff684b
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order
+    - field.storage.network_orders.field_date_created
+  module:
+    - datetime
+id: network_orders.network_order.field_date_created
+field_name: field_date_created
+entity_type: network_orders
+bundle: network_order
+label: 'Date Created'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

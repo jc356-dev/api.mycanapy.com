@@ -1,0 +1,23 @@
+uuid: 479540a4-0ab3-4da0-b700-ed6bacf65b36
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order_item
+    - field.storage.network_orders.field_quantity
+id: network_orders.network_order_item.field_quantity
+field_name: field_quantity
+entity_type: network_orders
+bundle: network_order_item
+label: Quantity
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

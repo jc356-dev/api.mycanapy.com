@@ -1,0 +1,23 @@
+uuid: 35c3be4a-7773-4578-9f65-c74a95a6875b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.updates
+  module:
+    - text
+id: node.updates.body
+field_name: body
+entity_type: node
+bundle: updates
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

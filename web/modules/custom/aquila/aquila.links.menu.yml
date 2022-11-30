@@ -1,0 +1,6 @@
+aquila.settings_form:
+  title: Aquila
+  description: Configure Aquila.
+  parent: system.admin_config_system
+  route_name: aquila.settings_form
+  weight: 10

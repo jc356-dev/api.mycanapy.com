@@ -1,0 +1,21 @@
+uuid: 7e4d9f9e-a6e9-460e-85f5-6ed613ef5e78
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: network_orders.field_address_line_2
+field_name: field_address_line_2
+entity_type: network_orders
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

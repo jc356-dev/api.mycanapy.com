@@ -1,0 +1,21 @@
+uuid: 04481a7e-08ad-4c62-8419-5b9b2a2e5dec
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order
+    - field.storage.network_orders.field_external_notes
+  module:
+    - text
+id: network_orders.network_order.field_external_notes
+field_name: field_external_notes
+entity_type: network_orders
+bundle: network_order
+label: 'External Notes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

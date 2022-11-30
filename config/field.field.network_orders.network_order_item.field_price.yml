@@ -1,0 +1,23 @@
+uuid: c8ec61cc-b39e-4fa0-b25a-14e7948940c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order_item
+    - field.storage.network_orders.field_price
+id: network_orders.network_order_item.field_price
+field_name: field_price
+entity_type: network_orders
+bundle: network_order_item
+label: Price
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

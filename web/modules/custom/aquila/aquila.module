@@ -1,0 +1,278 @@
+<?php
+use Drupal\Core\Routing\RouteMatchInterface;
+use \Drupal\user\UserInterface;
+use \Drupal\Entity\EntityTypeManager;
+use \Drupal\commerce_payment\Entity\PaymentGateway;
+use Drupal\Core\Render\Markup;
+use Stripe\Stripe;
+use Drupal\taxonomy\Entity\Term;
+use Symfony\Component\HttpFoundation\Request;
+
+
+
+
+/**
+ * @file
+ * Primary module hooks for elc module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+function aquila_get_frontend_url(){
+
+    global $base_url;
+    // \Drupal::logger('aquila-URL')->debug("<pre>" . print_r($base_url, TRUE) . "</pre>");
+    $frontend_url = 'https://app.mycanapy.com';
+    switch ($base_url == true) {
+    case 'https://api.mycanapy.com.ddev.site':
+      $frontend_url = 'http://localhost:8080';
+      break;
+    case 'https://stage-api.mycanapy.com':
+      $frontend_url = 'https://stage-app.mycanapy.com';
+      break;
+    case 'https://api.mycanapy.com':
+      $frontend_url = 'https://app.mycanapy.com';
+      break;
+    default:$frontend_url = 'https://app.mycanapy.com';
+      break;
+    }
+    // \Drupal::logger('aquila-URL')->debug("<pre>" . print_r($frontend_url, TRUE) . "</pre>");
+    define('AQUILA_FRONTEND_URL', $frontend_url);
+    return AQUILA_FRONTEND_URL;
+}
+
+/**
+ * Implements hook_help().
+ */
+function aquila_help($route_name, RouteMatchInterface $route_match) {
+  $output = '';
+  switch($route_name) {
+    // Main module help for the iam module.
+    case 'help.page.aquila' : //Loading the configuration.
+    $config = \Drupal::config('stripe.settings');
+    // Setting the secret key.
+//    $secretKey = $config->get('stripe.use_test')? $config->get('stripe.sk_test'): $config->get('stripe.sk_live');
+//    Stripe::setApiKey($secretKey);
+//    // dd($referral);
+//    // Create the session on Stripe.
+//    try {
+//      $sessions = \Stripe\Checkout\Session::all(['limit' => 100]);
+//    }
+//    catch(GuzzleException $error) {
+//      throw $error->getMessage();
+//    }
+//    try {
+//      $subscription = \Stripe\Subscription::all(['customer' => 'cus_LBT2QXAGG6dPwA']);
+//      $users = \Stripe\Customer::all(['email' => 'testing@test.com', 'limit' => 100]);
+//    }
+//    catch(GuzzleException $error) {
+//      throw $error->getMessage();
+//    }
+//    dd($sessions, $subscription);
+
+//      $step = Term::create([
+//        'name' => 'TEST',
+//        'description' => array(
+//          'value' => '#FF1111',
+//          'format' => 'basic_html',
+//        ),
+//        'vid' => 'Status'
+//      ]);
+//      $step->save();
+//      dd($step);
+  }
+  return '<pre>' . $output . '</pre>';
+}
+// @todo implement real permissions
+//function aquila_network_orders_access(\Drupal\Core\Entity\EntityInterface $entity, $operation, \Drupal\Core\Session\AccountInterface $account) {
+//
+//   \Drupal::logger('aquila')->debug('Hi');
+//  switch ($operation) {
+//    case 'view':
+//      if (!$account->hasPermission('view_own_network_order')) {
+//        return AccessResult::forbidden();
+//      }
+//      break;
+//  }
+//
+//}
+// function aquila_user_insert($account) {
+//   // \Drupal::logger('elc')->debug("Hello Again");
+//   // dd("PromoCodes");
+//   if( !empty($account->field_promo_code->value) || $account->field_promo_code->value != '') {
+//     $promo_codes = \Drupal::entityTypeManager()->getStorage('node')
+//       ->loadByProperties([
+//         //'field_promo_code' => $account->field_promo_code->value->toString()
+//         'type' => 'promo_codes',
+//         'title' => $account->field_promo_code->value
+//       ]);
+//     if(!empty($promo_codes)) {
+//       $account->set('field_account_type', 'team_member');
+//       $account->save();
+//       dd($promo_codes);
+//     } else {
+//       $account->set('field_account_type', 'free');
+//       $account->save();
+//     }
+//   }else{
+//     $account->set('field_account_type', 'free');
+//     $account->save();
+//   }
+// }
+
+/**
+ * Implements hook_mail().
+ */
+function aquila_mail($key, &$message, $params) {
+  $message['headers']['Content-Type'] = SWIFTMAILER_FORMAT_HTML;
+  // For Bcc.
+  $params['Bcc'] = 'OPTIONAL EMAILS FOR TESTING DELIVERY';
+  if(!empty($params['Bcc'])) {
+    $message['headers']['bcc'] = $params['Bcc'];
+    unset($params['Bcc']);
+  }
+  // Subject.
+  if(empty($message['subject'])) {
+    $message['subject'] = $params['subject'];
+  }
+  // Body.
+  if(empty($message['body'])) {
+    // Map array to string.
+    if(is_array($params['body'])) {
+
+      $message['body'] = array_map(function($text) {
+        return Markup::create($text);
+      }
+     , $text);
+    } else {
+      // Already string.
+      $message['body'][] = Markup::create($params['body']);
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function aquila_theme() {
+  $theme['aquila_commerce_order_receipt'] = ['variables' => [
+                      'order_entity' => NULL,
+                      'billing_information' => NULL,
+                      'shipping_information' => NULL,
+                      'customerEmail' => NULL,
+                      'payment_method' => NULL,
+                      'totals' => NULL,
+                    ],];
+  return $theme;
+}
+
+/**
+ * Sends an email.
+ *
+ * @param  [type] $user    [description]
+ * @param  [type] $message [description]
+ * @param  string $subject [description]
+ * @param  string $key     [description]
+ * @param  string $emailTo [description]
+ * @return [type]          [description]
+ */
+function aquila_send_mail($user, $message, $subject = '', $key = 'aquila_mail', $emailTo = 'marco@aquilacreative.co', $nl2br = TRUE) {
+  // Anonymous users, or system messages.  Allow pass through of email address
+  // to send to.
+  $site_name = \Drupal::config('system.site')->get('name');
+  $bcc = '';
+
+    \Drupal::logger('aquila-module')->debug("<pre>user empty " . empty($user) . "</pre>");
+    \Drupal::logger('aquila-module')->debug("<pre>user " . print_r($user, TRUE) . "</pre>");
+    \Drupal::logger('aquila-module')->debug("<pre>subject " . print_r($subject, TRUE) . "</pre>");
+  switch($user){
+    case empty($user):
+      $mailTo = $emailTo;
+    break;
+    case $user==null:
+      $mailTo = $emailTo;
+    break;
+    case $user:
+
+  if($user->isAnonymous()) {
+    $mailTo = $emailTo;
+  } else {
+    $mailTo = $user->getEmail();
+    $bcc = $emailTo;
+  }
+    break;
+    default:
+      $mailTo = $user->getEmail();
+      $bcc = $emailTo;
+      break;
+
+  }
+
+
+
+  if(empty($subject)) {
+    $subject = 'Notification from ' . $site_name;
+  }
+  // @todo @MS - this is not what we want.  $message can be just array of
+  // lines of a string.  aquilaOrderPaidSubscriber has so much built, it may just
+  // want to call the plugin.manager.mail directly.
+  if(is_array($message)) {
+    $params = $message;
+  } else {
+    // Convert new lines to <br /> for our array-generated emails.  Can be ignored for template based emails.
+    if($nl2br) {
+      $message = nl2br($message);
+    }
+    $params = array('body' =>$message,
+                    'subject' =>$subject,
+                   );
+  }
+  // Add bcc param if applicable.
+  if(!empty($bcc)) {
+    $params['Bcc'] = $bcc;
+  }
+  $langcode = $user ? $user->getPreferredLangcode() : 'en';
+  // Get the custom site notification email to use as the from email address
+  // if it has been set.
+  $site_mail = \Drupal::config('system.site')->get('mail_notification');
+  // If the custom site notification email has not been set, we use the site
+  // default for this.
+  if(empty($site_mail)) {
+    $site_mail = \Drupal::config('system.site')->get('mail');
+  }
+  if(empty($site_mail)) {
+    $site_mail = ini_get('sendmail_from');
+  }
+  $mail = \Drupal::service('plugin.manager.mail')->mail('aquila', $key, $mailTo, $langcode, $params, $site_mail);
+}
+
+/**
+ * Create password uli link for use in emails and such.
+ *
+ * @param  [type] $user        [description]
+ * @param  string $destination [description]
+ * @return [type]              [description]
+ */
+function aquila_create_user_uli($user, $destination = '') {
+  // Generate ULI.
+  $url = user_pass_reset_url($user);
+  // Replace domain @todo from config(frontend.url).
+  global $base_url;
+  $url = str_replace($base_url, aquila_get_frontend_url(), $url);
+  $urlExplode = explode('/', $url);
+  // Generate params from uli portions.
+  $params[] = '?hash=' . array_pop($urlExplode);
+  $params[] = 'timestamp=' . array_pop($urlExplode);
+  $params[] = 'uid=' . array_pop($urlExplode);
+  $url = implode('/', $urlExplode);
+  $urlParams = implode('&', $params);
+  $url .= $urlParams;
+  // Add destination parameter.  @todo can be better.
+  if(!empty($destination)) {
+    $url .= "&destination={$destination}";
+  }
+  // dd($url);
+  return $url;
+}

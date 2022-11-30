@@ -1,0 +1,18 @@
+uuid: 783dd46a-6f22-4c83-a709-f8a1b6e0e439
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - jwt
+    - serialization
+id: entity.comment_type
+plugin_id: 'entity:comment_type'
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - jwt_auth

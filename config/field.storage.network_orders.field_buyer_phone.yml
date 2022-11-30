@@ -1,0 +1,21 @@
+uuid: 9e53316b-98c3-4b43-99d7-bda431d4ac3f
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: network_orders.field_buyer_phone
+field_name: field_buyer_phone
+entity_type: network_orders
+type: string
+settings:
+  max_length: 30
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

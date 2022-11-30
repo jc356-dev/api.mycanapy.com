@@ -1,0 +1,6 @@
+name: 'Rest Toolkit'
+type: module
+description: 'A collection of the finest tools in the land for your RESTful needs.'
+core: 8.x
+package: 'Web services'
+core_version_requirement: ^8 || ^9

@@ -1,0 +1,28 @@
+uuid: 05d8864a-3273-47bd-b7d0-3536598b852c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.order_tasks.task
+    - eck.eck_type.order_tasks.user2task
+    - field.storage.order_tasks.field_task
+id: order_tasks.user2task.field_task
+field_name: field_task
+entity_type: order_tasks
+bundle: user2task
+label: Task
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:order_tasks'
+  handler_settings:
+    target_bundles:
+      task: task
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

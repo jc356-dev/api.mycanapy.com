@@ -1,0 +1,19 @@
+uuid: 20cef63a-12ce-484a-a437-09a68d21c175
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order_item
+    - field.storage.network_orders.field_sku
+id: network_orders.network_order_item.field_sku
+field_name: field_sku
+entity_type: network_orders
+bundle: network_order_item
+label: SKU
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

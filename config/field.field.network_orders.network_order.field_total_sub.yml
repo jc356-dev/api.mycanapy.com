@@ -1,0 +1,23 @@
+uuid: 49ea0af5-5eca-4774-9154-636a5378ad0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order
+    - field.storage.network_orders.field_total_sub
+id: network_orders.network_order.field_total_sub
+field_name: field_total_sub
+entity_type: network_orders
+bundle: network_order
+label: 'Total Sub'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

@@ -1,0 +1,9 @@
+uuid: aec70617-4794-42fc-bd39-385ddf8f6760
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.network_connect
+type: user2network
+name: User2Network
+description: 'Storage of User/Network Connection'

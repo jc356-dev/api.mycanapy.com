@@ -1,0 +1,21 @@
+uuid: 37c6523c-a5dc-44fb-bc6e-a7a5b7cada0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order
+    - field.storage.network_orders.field_date_ship_by
+  module:
+    - datetime
+id: network_orders.network_order.field_date_ship_by
+field_name: field_date_ship_by
+entity_type: network_orders
+bundle: network_order
+label: 'Date Ship By'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

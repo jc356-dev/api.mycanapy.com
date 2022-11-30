@@ -1,0 +1,28 @@
+uuid: 16875e83-d5f7-421b-b166-e886a96d59d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.notifications.user2notification
+    - field.storage.notifications.field_user
+id: notifications.user2notification.field_user
+field_name: field_user
+entity_type: notifications
+bundle: user2notification
+label: User
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

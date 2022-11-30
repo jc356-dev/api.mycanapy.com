@@ -1,0 +1,8 @@
+uuid: 06ddf424-2822-42a2-8c43-78025bad1260
+langcode: en
+status: true
+dependencies: {  }
+id: internal_notes
+label: 'Internal Notes'
+target_entity_type_id: network_orders
+description: ''

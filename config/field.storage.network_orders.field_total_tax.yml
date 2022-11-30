@@ -1,0 +1,18 @@
+uuid: d65ce382-c7f5-4c1d-89cd-1a3c682d8eee
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: network_orders.field_total_tax
+field_name: field_total_tax
+entity_type: network_orders
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

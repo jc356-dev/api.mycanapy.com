@@ -1,0 +1,9 @@
+uuid: 5ac261e3-ebfd-4231-98df-151f9f3151ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.network_orders
+type: network_order_item
+name: 'Network Order Item'
+description: 'Items that belong to a network order'

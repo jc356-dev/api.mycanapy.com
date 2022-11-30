@@ -1,0 +1,21 @@
+uuid: b7bddc13-3482-42d4-98b9-e3f3048db7af
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: network_orders.field_external_status
+field_name: field_external_status
+entity_type: network_orders
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

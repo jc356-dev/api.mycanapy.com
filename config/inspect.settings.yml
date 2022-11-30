@@ -1,0 +1,10 @@
+depth: 10
+trace_depth: 2
+trace_limit: 5
+truncate: 100
+escape_html: true
+output_max: 65535
+exectime_percent: 80
+rootdir_replace: true
+_core:
+  default_config_hash: '-7bDSOqwtWb18HsM5ubfN-a0n9ZhxXweOC5YG-6Hs1E'

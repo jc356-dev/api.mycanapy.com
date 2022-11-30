@@ -1,0 +1,28 @@
+uuid: 3e365e2e-4e68-4ffa-a124-276730aa90a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order
+    - eck.eck_type.order_tasks.user2task
+    - field.storage.order_tasks.field_order
+id: order_tasks.user2task.field_order
+field_name: field_order
+entity_type: order_tasks
+bundle: user2task
+label: Order
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:network_orders'
+  handler_settings:
+    target_bundles:
+      network_order: network_order
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

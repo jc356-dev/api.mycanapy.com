@@ -1,0 +1,9 @@
+uuid: 8dd3232f-b331-40ac-bef1-e3e536e7127a
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.notifications
+type: user2notification
+name: User2Notification
+description: ''

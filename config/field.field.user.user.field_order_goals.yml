@@ -1,0 +1,26 @@
+uuid: 4c2ed931-f236-4f30-9292-a24ce9e2a927
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_order_goals
+  module:
+    - user
+id: user.user.field_order_goals
+field_name: field_order_goals
+entity_type: user
+bundle: user
+label: 'Order Goals'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

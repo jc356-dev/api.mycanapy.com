@@ -1,0 +1,3 @@
+algorithm: RS256
+key_id: mycanapy_key
+exp: '0'

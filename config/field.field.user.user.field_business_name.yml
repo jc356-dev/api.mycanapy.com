@@ -1,0 +1,20 @@
+uuid: 4dec4420-76f0-41c7-99a8-78ca7ff412af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_business_name
+  module:
+    - user
+id: user.user.field_business_name
+field_name: field_business_name
+entity_type: user
+bundle: user
+label: 'Business Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

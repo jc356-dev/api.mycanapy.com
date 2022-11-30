@@ -1,0 +1,19 @@
+uuid: 7e7ecfc3-4f43-450e-bd9c-d04998ea3ace
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order
+    - field.storage.network_orders.field_buyer_name
+id: network_orders.network_order.field_buyer_name
+field_name: field_buyer_name
+entity_type: network_orders
+bundle: network_order
+label: 'Buyer Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

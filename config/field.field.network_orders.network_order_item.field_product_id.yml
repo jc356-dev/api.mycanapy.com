@@ -1,0 +1,19 @@
+uuid: a39e2863-1ec8-4d09-a3b4-e9b833e5292f
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order_item
+    - field.storage.network_orders.field_product_id
+id: network_orders.network_order_item.field_product_id
+field_name: field_product_id
+entity_type: network_orders
+bundle: network_order_item
+label: 'Product ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

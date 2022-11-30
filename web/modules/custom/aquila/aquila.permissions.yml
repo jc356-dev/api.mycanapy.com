@@ -1,0 +1,4 @@
+administer aquila configuration:
+  title: 'Administer aquila configuration'
+  description: 'Optional description.'
+  restrict access: true

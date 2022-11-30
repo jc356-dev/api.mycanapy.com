@@ -1,0 +1,23 @@
+uuid: 16845779-ad61-468a-a6c2-f93f2e81cbdc
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order
+    - field.storage.network_orders.field_total_grand
+id: network_orders.network_order.field_total_grand
+field_name: field_total_grand
+entity_type: network_orders
+bundle: network_order
+label: 'Total Grand'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

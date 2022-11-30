@@ -1,0 +1,40 @@
+uuid: 506ac6b5-03d3-4eae-8854-e4eaafe3c003
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.order_tasks.task
+  module:
+    - user
+id: order_tasks.task.default
+targetEntityType: order_tasks
+bundle: task
+mode: default
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 0
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  uid:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  changed: true

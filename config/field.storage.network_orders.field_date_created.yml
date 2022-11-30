@@ -1,0 +1,20 @@
+uuid: 7b483626-d891-4cb0-bd15-29244ca3af1d
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - eck
+id: network_orders.field_date_created
+field_name: field_date_created
+entity_type: network_orders
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 6d79d69e-7e37-4237-9bb2-23459b4fe995
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: order_tasks.field_order
+field_name: field_order
+entity_type: order_tasks
+type: entity_reference
+settings:
+  target_type: network_orders
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

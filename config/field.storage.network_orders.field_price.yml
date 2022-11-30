@@ -1,0 +1,20 @@
+uuid: e4a25635-5a5a-418f-833a-a7277ef6874a
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: network_orders.field_price
+field_name: field_price
+entity_type: network_orders
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

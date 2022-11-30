@@ -1,0 +1,21 @@
+uuid: 7a09f707-bc48-4385-95e0-a2a9eabfa206
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: network_connect.field_access_token
+field_name: field_access_token
+entity_type: network_connect
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

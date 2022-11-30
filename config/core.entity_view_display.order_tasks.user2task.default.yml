@@ -1,0 +1,89 @@
+uuid: edc5e245-b12e-47aa-bab0-e5723320b85a
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.order_tasks.user2task
+    - field.field.order_tasks.user2task.field_due_date
+    - field.field.order_tasks.user2task.field_is_done
+    - field.field.order_tasks.user2task.field_order
+    - field.field.order_tasks.user2task.field_task
+    - field.field.order_tasks.user2task.field_user
+  module:
+    - datetime
+    - user
+id: order_tasks.user2task.default
+targetEntityType: order_tasks
+bundle: user2task
+mode: default
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 0
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  field_due_date:
+    weight: 5
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_is_done:
+    weight: 3
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_order:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_task:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_user:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  uid:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  changed: true

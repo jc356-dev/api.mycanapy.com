@@ -1,0 +1,15 @@
+uuid: aa65b00c-16c8-431b-9921-09bea8da0230
+name: 'My Canapy'
+mail: info@mycanapy.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /admin/content
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
+mail_notification: ''

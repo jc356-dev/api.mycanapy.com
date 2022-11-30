@@ -1,0 +1,21 @@
+uuid: 046bdb59-bdab-4228-ab03-1b3402e484b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.order_tasks.user2task
+    - field.storage.order_tasks.field_due_date
+  module:
+    - datetime
+id: order_tasks.user2task.field_due_date
+field_name: field_due_date
+entity_type: order_tasks
+bundle: user2task
+label: 'Due Date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

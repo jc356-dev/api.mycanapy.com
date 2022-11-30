@@ -1,0 +1,9 @@
+uuid: 35a68da6-bfef-48d8-932a-88a4376dffd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.network_orders
+type: network_order
+name: 'Network Order'
+description: 'Orders that belong to a network'

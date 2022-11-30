@@ -1,0 +1,30 @@
+uuid: a0e25611-90ee-4bf1-b4af-24dc4604935d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.status.field_label_color
+    - taxonomy.vocabulary.status
+  module:
+    - text
+id: taxonomy_term.status.default
+targetEntityType: taxonomy_term
+bundle: status
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_label_color:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -1,0 +1,7 @@
+ignored_config_entities:
+  - field.field.network_orders.network_order.field_internal_status
+  - field.field.user.user.field_order_process
+  - stripe.settings
+  - system.site
+_core:
+  default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk

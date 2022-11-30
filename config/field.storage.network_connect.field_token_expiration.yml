@@ -1,0 +1,20 @@
+uuid: 80cdfc36-f49c-4c9a-9bb0-7ee12aadc7e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - eck
+id: network_connect.field_token_expiration
+field_name: field_token_expiration
+entity_type: network_connect
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

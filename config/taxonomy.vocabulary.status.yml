@@ -1,0 +1,8 @@
+uuid: 576f701a-9b9d-4aec-a953-efc3aef76e76
+langcode: en
+status: true
+dependencies: {  }
+name: Status
+vid: status
+description: 'Order Status'
+weight: 0

@@ -1,0 +1,23 @@
+uuid: cc5278b3-26fd-4553-b368-ec1562504876
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.order_tasks.user2task
+    - field.storage.order_tasks.field_is_done
+id: order_tasks.user2task.field_is_done
+field_name: field_is_done
+entity_type: order_tasks
+bundle: user2task
+label: 'Is Done'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'true'
+  off_label: 'false'
+field_type: boolean

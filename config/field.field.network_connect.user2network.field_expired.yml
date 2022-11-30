@@ -1,0 +1,23 @@
+uuid: c81e0c14-1efc-4c95-b237-c0c1912a43bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_connect.user2network
+    - field.storage.network_connect.field_expired
+id: network_connect.user2network.field_expired
+field_name: field_expired
+entity_type: network_connect
+bundle: user2network
+label: Expired
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'true'
+  off_label: 'false'
+field_type: boolean

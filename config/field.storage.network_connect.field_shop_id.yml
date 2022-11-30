@@ -1,0 +1,21 @@
+uuid: 1b896bed-2d07-4b0c-a276-17003d3c1505
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: network_connect.field_shop_id
+field_name: field_shop_id
+entity_type: network_connect
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

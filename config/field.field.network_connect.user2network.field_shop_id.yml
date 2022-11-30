@@ -1,0 +1,19 @@
+uuid: 512cd618-e443-4471-b818-97b4f4712e15
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_connect.user2network
+    - field.storage.network_connect.field_shop_id
+id: network_connect.user2network.field_shop_id
+field_name: field_shop_id
+entity_type: network_connect
+bundle: user2network
+label: 'Shop ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 4a769afc-5f7d-49a8-b012-955bd73b87bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.order_tasks.user2task
+    - field.storage.order_tasks.field_user
+id: order_tasks.user2task.field_user
+field_name: field_user
+entity_type: order_tasks
+bundle: user2task
+label: User
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings: {  }
+field_type: entity_reference

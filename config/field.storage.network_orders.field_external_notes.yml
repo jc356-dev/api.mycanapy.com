@@ -1,0 +1,19 @@
+uuid: 2dffe152-9778-4767-a57a-909e8b0c0958
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - text
+id: network_orders.field_external_notes
+field_name: field_external_notes
+entity_type: network_orders
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

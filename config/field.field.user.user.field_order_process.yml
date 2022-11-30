@@ -1,0 +1,37 @@
+uuid: 7470adac-d37a-4cc1-93fb-7a6cc8343825
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_order_process
+    - taxonomy.vocabulary.status
+  content:
+    - 'taxonomy_term:status:56041837-2b18-4491-b6a7-db345cb01add'
+    - 'taxonomy_term:status:8ad9a29a-6606-4517-a22c-7e654c269bc0'
+  module:
+    - user
+id: user.user.field_order_process
+field_name: field_order_process
+entity_type: user
+bundle: user
+label: 'Order Process'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 56041837-2b18-4491-b6a7-db345cb01add
+  -
+    target_uuid: 8ad9a29a-6606-4517-a22c-7e654c269bc0
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      status: status
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

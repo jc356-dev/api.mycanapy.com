@@ -1,0 +1,24 @@
+uuid: 047f6ebf-ef23-48c9-ab54-a577c33ea59f
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_connect.user2network
+    - field.storage.network_connect.field_token_expiration
+  module:
+    - datetime
+id: network_connect.user2network.field_token_expiration
+field_name: field_token_expiration
+entity_type: network_connect
+bundle: user2network
+label: 'Token Expiration'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: relative
+    default_date: '+90 days'
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,20 @@
+uuid: 118dadff-5555-4f99-933b-23fe394a4485
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - taxonomy
+id: network_connect.field_network
+field_name: field_network
+entity_type: network_connect
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

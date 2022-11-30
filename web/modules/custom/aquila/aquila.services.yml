@@ -1,0 +1,14 @@
+services:
+  aquila.event_subscriber:
+    class: Drupal\aquila\EventSubscriber\AquilaSubscriber
+    arguments: ['@messenger']
+    tags:
+      - { name: event_subscriber }
+
+  aquila.oauth:
+    class: Drupal\aquila\Oauth
+
+  aquila.webhooks:
+    class: Drupal\aquila\Controller\AquilaWebhookController
+    arguments:
+      ['@renderer']

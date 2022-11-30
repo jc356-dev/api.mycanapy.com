@@ -1,0 +1,20 @@
+uuid: 96e0d544-4c3d-4d02-9605-432f09194fa1
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: network_orders.field_address_zip
+field_name: field_address_zip
+entity_type: network_orders
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

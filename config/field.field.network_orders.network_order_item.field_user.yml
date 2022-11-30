@@ -1,0 +1,21 @@
+uuid: 04f3808f-879e-43c2-a42a-4ee8236b971d
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order_item
+    - field.storage.network_orders.field_user
+id: network_orders.network_order_item.field_user
+field_name: field_user
+entity_type: network_orders
+bundle: network_order_item
+label: User
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings: {  }
+field_type: entity_reference

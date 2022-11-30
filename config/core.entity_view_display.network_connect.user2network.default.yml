@@ -1,0 +1,114 @@
+uuid: 0c9384a5-db81-4ae8-86ed-b8001fb4a1ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_connect.user2network
+    - field.field.network_connect.user2network.field_access_token
+    - field.field.network_connect.user2network.field_expired
+    - field.field.network_connect.user2network.field_network
+    - field.field.network_connect.user2network.field_network_id
+    - field.field.network_connect.user2network.field_refresh_token
+    - field.field.network_connect.user2network.field_shop_id
+    - field.field.network_connect.user2network.field_shop_title
+    - field.field.network_connect.user2network.field_token_expiration
+    - field.field.network_connect.user2network.field_user
+  module:
+    - datetime
+    - user
+id: network_connect.user2network.default
+targetEntityType: network_connect
+bundle: user2network
+mode: default
+content:
+  field_access_token:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_expired:
+    weight: 8
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_network:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_network_id:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_refresh_token:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_shop_id:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_shop_title:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_token_expiration:
+    weight: 4
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_user:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  uid:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

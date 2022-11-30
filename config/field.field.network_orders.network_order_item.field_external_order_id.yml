@@ -1,0 +1,19 @@
+uuid: 76e3c399-be26-4022-9342-8fb6304777b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order_item
+    - field.storage.network_orders.field_external_order_id
+id: network_orders.network_order_item.field_external_order_id
+field_name: field_external_order_id
+entity_type: network_orders
+bundle: network_order_item
+label: 'External Order ID'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: 50e3cc3e-9b9f-4166-9005-a03a7c304746
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.network_orders.network_order_item
+    - field.storage.network_orders.field_variation
+id: network_orders.network_order_item.field_variation
+field_name: field_variation
+entity_type: network_orders
+bundle: network_order_item
+label: Variation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
